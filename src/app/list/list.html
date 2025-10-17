@@ -1,0 +1,12 @@
+<div class="book-list">
+  <h2>Book List</h2>
+  <div *ngIf="books.length === 0" class="no-books">
+    No books available.
+  </div>
+  <div *ngFor="let book of books" class="book-item" [appHighlight]="book.price">
+    <h3>{{ book.title | titleCase }}</h3>
+    <p><strong>Author:</strong> {{ book.author }}</p>
+    <p><strong>Price:</strong> {{ book.price | currency:'UAH':'symbol':'1.0-0' }}</p>
+    <p><strong>Published Date:</strong> {{ book.publishedDate | date:'mediumDate' }}</p>
+  </div>
+</div>
